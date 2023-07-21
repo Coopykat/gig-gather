@@ -14,27 +14,22 @@ class UserModel extends BaseModel {
         const { firstname, password } = userData;
     
         try {
-          // Requête SQL pour sélectionner l'utilisateur avec le prénom donné
           const queryResult = await this.db.query(
             "SELECT hashedpassword AS hashedPassword FROM users WHERE firstname = ? LIMIT 1",
             [firstname]
           );
-    
-          // Vérifier si un utilisateur a été trouvé avec le prénom donné
           if (queryResult.length === 0) {
-            return null; // Aucun utilisateur trouvé
+            return null; 
           }
     
-          const user = queryResult[0]; // Premier utilisateur trouvé (nous supposons que les prénoms sont uniques)
-        //   console.log(user)
-          // Vérifier le mot de passe haché
+          const user = queryResult[0]; 
           const isPasswordValid = await argon2.verify(user.hashedPassword, password);
           console.log(user.hashedPassword)
           if (!isPasswordValid) {
-            return null; // Mot de passe incorrect
+            return null; 
           }
     
-          return user; // Retourner l'utilisateur trouvé
+          return user; 
         } catch (error) {
           console.error("Erreur lors de la requête :", error);
           throw error;

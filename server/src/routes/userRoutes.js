@@ -6,6 +6,7 @@ const EventController = require('../controllers/EventController');
 
 const userRouter = Router();
 
+
 userRouter.get('', (req, res) => new UserController(req, res).getAll());
 userRouter.get('/:id', (req, res) => new UserController(req, res).getById());
 

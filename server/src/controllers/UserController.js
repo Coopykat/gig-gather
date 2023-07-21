@@ -24,27 +24,22 @@ class UserController extends BaseController {
       }
   }
 
+  // login work in progress //
+
     async login() {
         const { firstname, password } = this.req.body;
           this.model
           console.log({firstname})
 
         try {
-          // Récupérer l'utilisateur par son firstname depuis la base de données
           const user = await this.model.getBy({ firstname });
-    
-          // Vérifier si l'utilisateur existe
           if (!user) {
             return this.res.status(401).send({ error: "Invalid firstname or password." });
           }
-    
-          // Vérifier si le mot de passe correspond au hachage stocké dans la base de données
           const isPasswordValid = await argon2.verify(user.hashedPassword, password);
           if (!isPasswordValid) {
             return this.res.status(401).send({ error: "Invalid firstname or password." });
           }
-    
-          // Si l'authentification est réussie, renvoyer une réponse réussie
           return this.res.status(200).send({ message: "Authentication successful!" });
         } catch (error) {
           console.error("Error during login:", error);
