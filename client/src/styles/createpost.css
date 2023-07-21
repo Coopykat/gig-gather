@@ -1,0 +1,36 @@
+h2 {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    color: var(--darkest-color);
+}
+
+.form-post-event{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--darkest-color); 
+    margin: auto;
+    width: 70%;
+    height: 30%;
+    padding: 1em;
+}
+input, textarea {
+    width: 80%;
+    margin: 0.5em;
+    padding: 1em;
+    border-style: none;
+    background-color: var(--light-color);
+}
+#post-gig-btn {
+    background-color: var(--light-color);
+}
+#post-gig-btn:hover {
+    background-color: var(--darkest-color);
+    cursor: pointer;
+    color: var(--light-color);
+    opacity: 0.6;
+    transition: 0.4s;
+
+}

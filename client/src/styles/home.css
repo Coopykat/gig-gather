@@ -1,0 +1,89 @@
+h2 {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    color: var(--darkest-color);
+}
+label {
+    color: #bfafaf;
+    margin: 0;
+    font-size: smaller;
+    display: flex;
+    align-items: center;
+}
+.inscription-form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--darkest-color); 
+    border-radius: 8px;
+    margin: auto;
+    width: 70%;
+    height: 30%;
+    padding: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* INPUTS  AND INSCRIPTION BUTTONS */
+#firstname, #lastname, #mail, #password, #verif-password, #connexion-firstname, #connexion-password  {
+    width: 80%;
+    margin: 0.5em;
+    padding: 1em;
+    border-style: none;
+    border-radius: 6px;
+}
+button {
+    width: 60%;
+    margin: 2em 1em 1em 1em;
+    padding: 1em;
+    border-style: none;
+    border-radius: 12px;
+}
+#inscription-btn {
+    background-color: var(--light-color);
+}
+#inscription-btn:hover,
+#inscription-btn:hover {
+    background-color: var(--darkest-color);
+    cursor: pointer;
+    color: var(--light-color);
+    opacity: 0.6;
+    transition: 0.4s;
+}
+
+/* CONNEXION LOGIN SECTION */
+
+.connexion-form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--darkest-color); 
+    border-radius: 8px;
+    margin: auto;
+    width: 70%;
+    height: 10%;
+    padding: 1em;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+}
+#connexion-btn {
+    background-color: var(--light-color);
+}
+#connexion-btn:hover,
+#connexion-btn:active {
+    background-color: var(--darkest-color);
+    cursor: pointer;
+    color: var(--light-color);
+    opacity: 0.6;
+    transition: 0.4s;
+}
+.error-message { 
+    margin-bottom: 1em;
+    font-size: 0.8em; 
+    color: #bfafaf;
+}
+.password-ok {
+    display: none;
+}
